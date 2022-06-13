@@ -1,4 +1,4 @@
-package com.example.userws.constant;
+package com.example.blogsms.security;
 
 
 /**

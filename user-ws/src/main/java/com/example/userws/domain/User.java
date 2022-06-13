@@ -43,7 +43,7 @@ public class User {
   @Enumerated(EnumType.STRING)
   private RoleType roleType;
   //a user can have multiple roles
-  @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+  @ManyToMany(fetch = FetchType.EAGER)
   @JoinTable
   private List<Role> roles;
 }

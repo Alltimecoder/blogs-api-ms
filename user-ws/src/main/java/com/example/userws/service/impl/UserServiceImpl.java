@@ -11,6 +11,7 @@ import com.example.userws.repository.RoleRepo;
 import com.example.userws.repository.UserRepo;
 import com.example.userws.service.UserService;
 import feign.FeignException;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -58,6 +59,7 @@ public class UserServiceImpl implements UserService {
       user.setRoles(roleList);
       user.setStatus(Status.CREATED);
       user.setPassword(passwordEncoder.encode(user.getPassword()));
+      user.setCreatedDate(Instant.now());
       userRepo.save(user);
     } else {
       throw new CannotProceedException("roleType is missing");
